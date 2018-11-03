@@ -7,9 +7,37 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper white">
+        <a href="#" class="brand-logo grey-text">
+          Histgram
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><i class="material-icons left">assignment</i></li>
+          <li><i class="material-icons left">assignment</i></li>
+          <li><i class="material-icons left">assignment</i></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger grey-text">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+    </nav>
+
+    <!-- sidenav -->
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <i class="material-icons left">assignment</i>メモ一覧
+      </li>
+    </ul>
+
     <%= yield %>
   </body>
 </html>
