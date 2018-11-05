@@ -15,15 +15,15 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-wrapper white">
-        <a href="#" class="brand-logo black-text">Histgram</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <nav class="nav-extended">
+      <div class="nav-wrapper" style="background:#294C7A;">
+        <a href="#" class="brand-logo white-text">Histgram</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down white-text">
           <li><i class="material-icons left">search</i></li>
           <li><i class="material-icons left">assignment</i></li>
           <li><i class="material-icons left">assignment</i></li>
         </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger grey-text">
+        <a href="#" data-target="slide-out" class="sidenav-trigger white-text">
           <i class="material-icons">menu</i>
         </a>
       </div>
@@ -32,17 +32,21 @@
     <!-- sidenav -->
     <ul id="slide-out" class="sidenav">
       <li>
-        <i class="material-icons left">assignment</i>メモ一覧
+        <a href="#"><i class="material-icons left">assignment</i>メモ一覧</a>
+      </li>
+      <li href="#">
+        <a><i class="material-icons left">assignment</i>メモ一覧</a>
       </li>
     </ul>
 
     <%= yield %>
-  </body>
 
-  <script>
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems, options);
+      var instances = M.Sidenav.init(elems, {});
     });
   </script>
+  </body>
+
 </html>
