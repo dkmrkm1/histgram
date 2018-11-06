@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # home
-  root to: 'home#index'
+  get 'home/index' => "home#index"
 
   # posts
-  get 'posts/index' => 'posts#index'
+  root to: 'posts#index'
 end
