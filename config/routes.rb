@@ -4,4 +4,9 @@ Rails.application.routes.draw do
 
   # posts
   root to: 'posts#index'
+  get "new" => "posts#new"
+  
+
+  # users
+
 end
