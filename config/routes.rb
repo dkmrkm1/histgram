@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   # posts
   root to: 'posts#index'
-  get "new" => "posts#new"
-  
+  get "posts/new" => "posts#new"
+  post "posts/create" => "posts#create"
 
   # users
 

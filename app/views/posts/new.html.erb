@@ -1,16 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col s12 m12 l12">
-      <div class="row" style="border: 1px solid black; margin-top: 40px;">
-        <div class="input-field col s6">
-          <input placeholder="name" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+      <%= form_tag("/posts/create") do %>
+        <div class="form">
+          <input name="content" type="text" placeholder="内容" value="<%= @post.content %>">
+          <input type="submit" value="投稿">
         </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

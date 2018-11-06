@@ -45,11 +45,10 @@
 
     <%= yield %>
 
-    <!-- [TODO]for new post -->
     <div class="fixed-action-btn">
-      <a class="btn-floating btn-large red">
+      <%= link_to posts_new_path, class: "btn-floating btn-large red" do %>
         <i class="large material-icons">add</i>
-      </a>
+      <% end %>
     </div>
 
     <script>
