@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
+  get "posts/:id" => "posts#show", as: "posts"
+  get "posts/:id/edit" => "posts#edit"
 
   # users
 
