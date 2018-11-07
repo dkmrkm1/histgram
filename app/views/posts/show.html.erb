@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag @post.image.to_s %>
+      </div>
+      <div class="card-content">
+        <p><%= simple_format(@post.content) %></p>
+      </div>
+    </div>
+  </div>
+</div>
