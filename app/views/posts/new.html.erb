@@ -2,6 +2,14 @@
   <div class="row">
     <div class="col s12 m12 l12">
       <%= form_for @post, :url => {:action => 'create'} do |f| %>
+
+        <!-- error msg -->
+        <% @post.errors.full_messages.each do |message| %>
+          <div class="">
+            <%= message %>
+          </div>
+        <% end %>
+
         <%= f.text_field :content %>
         <%= f.file_field :image %>
         <input type="submit" value="投稿">
