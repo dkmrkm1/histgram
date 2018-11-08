@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   # users
 
+  # login
+  get "login" => "home#login"
+  
 end
