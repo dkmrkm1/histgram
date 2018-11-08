@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # home
   get 'home/index' => "home#index"
+  get "about" => "home#about"
 
   # posts
   root to: 'posts#index'
