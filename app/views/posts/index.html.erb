@@ -3,14 +3,14 @@
   <div class="row">
     <% @post.each do |post| %>
       <div class="col s4 m4 l4">
-        <div class="card" style="min-height:250px;">
-          <div class="card-content black-text">
-            <!-- <%= link_to(simple_format(post.content), "posts/#{post.id}") %> -->
-            <%= link_to posts_path(post.id) do %>
+        <%= link_to posts_path(post.id) do %>
+          <div class="card" style="min-height:250px;">
+            <div class="card-image">
+              <!-- <%= link_to(simple_format(post.content), "posts/#{post.id}") %> -->
               <%= post.image %>
-            <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
