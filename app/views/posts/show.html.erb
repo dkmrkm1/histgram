@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="card">
-      <%= link_to "Back", :back %>
       <div class="card-image">
         <%= image_tag @post.image.to_s %>
       </div>
       <div class="card-content">
         <p><%= simple_format(@post.content) %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to "Back", :back %>
       </div>
     </div>
   </div>

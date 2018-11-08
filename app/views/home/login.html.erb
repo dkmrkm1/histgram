@@ -1,8 +1,67 @@
 <!-- login -->
-<div class="container">
+<div class="container" id="login-form">
   <div class="row">
     <div class="col s12 m12 l12">
-      <p>hogehgoe</p>
+      <h1>LOG IN</h1>
+      <div class="tbox">
+        <input type="text" name="" value="" placeholder="username">
+      </div>
+      <div class="tbox">
+        <input type="text" name="" value="" placeholder="password">
+      </div>
+      <p><input type="submit" class="btn" value="LOG IN"></p>
+      <a href="#" class="b1">FORGOT PASSWORD ?</a>
+      <a href="#" class="b2">CREATE AN ACCOUNT</a>
     </div>
   </div>
 </div>
+
+<style>
+#login-form {
+  background: #333;
+  font-family: "Montserrat", sans-serif !important;
+}
+#login-form.container {
+  height: 600px;
+  color: white;
+  text-align: center;
+  background-image: "/images/test1.png";
+}
+#login-form h1 {
+  font-size: 3rem;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.tbox {
+  width: 260px;
+  height: 40px;
+  background: #f1f1f1b3;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+.tbox input {
+  border: none !important;
+  background: none;
+  outline: none;
+  text-align: center;
+  width: 90%;
+  line-height: 36px;
+  color: #333;
+}
+#login-form .btn {
+  width: 260px;
+  background: #3498db;
+  border-radius: 10px;
+  margin: 14px auto;
+  border: none;
+}
+.b1, .b2 {
+  display: block;
+  width: 260px;
+  padding: 10px 0;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+</style>
