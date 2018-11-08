@@ -14,5 +14,5 @@ Rails.application.routes.draw do
 
   # login
   get "login" => "home#login"
-  
+  get "logout" => "home#logout"    
 end
