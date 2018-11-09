@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .row .col {
-  padding: 0.3rem;
+  padding: 0.3rem !important;
 }
 .row .col.s6 {
-  height: 224px;
+  height: 235px;
 }
 .container {
   width: 95% !important;
