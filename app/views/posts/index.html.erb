@@ -4,7 +4,7 @@
     <% @post.each do |post| %>
       <div class="col s6 m4 l3">
         <%= link_to posts_path(post.id) do %>
-          <div class="card" style="min-height:250px; border-radius:6px;">
+          <div class="card" style="border-radius:6px;">
             <div class="card-image">
               <!-- <%= link_to(simple_format(post.content), "posts/#{post.id}") %> -->
               <%= image_tag post.image.to_s, :alt => "image" %>
