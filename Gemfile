@@ -68,3 +68,4 @@ end
 
 gem 'carrierwave'
 gem 'fog'
+gem 'dotenv-rails'
