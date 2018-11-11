@@ -1,24 +1,16 @@
-# README
+# Histgram
+![](https://img.shields.io/badge/release-v0.1.0-blue.svg)
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![image](https://i.imgur.com/1eTEPBM.png)
 
-Things you may want to cover:
+An image submission type social network service like an instagram created with rails.
 
-* Ruby version
+## Usage
 
-* System dependencies
+#### 1.Take memorable pictures
+#### 1.Take memorable pictures
 
-* Configuration
+## Demo
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![image](https://i.imgur.com/HImpaoi.gif)
