@@ -8,8 +8,9 @@ An image submission type social network service like an instagram created with r
 
 ## Usage
 
-#### 1.Take memorable pictures
-#### 1.Take memorable pictures
+#### 1.Take memorable pictures.
+#### 2.Upload the picture to Histgram.
+#### 3.You are so happy!!
 
 ## Demo
 
