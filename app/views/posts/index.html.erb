@@ -1,23 +1,20 @@
 <!-- posts -->
 <div class="content" style="margin-top:1.5rem;">
   <div class="gallery">
-    
     <% @post.each do |post| %>
-      <%= link_to posts_path(post.id) do %>
-        <div class="gallery__item" tabindex="0">
-          <%= image_tag post.image.to_s, :class => "gallery__image", :alt => "image" %>
-          <div class="gallery__item__info">
-            <ul>
-              <li class="gallery__item__likes">
-                <span class="visually-hidden">Likes:</span>
-                <i class="fas fa-heart" aria-hidden="true"></i> 56
-              </li>
-              <li class="gallery-item-comments">
-                <span class="visually-hidden">Comments:</span>
-                <i class="fas fa-comment" aria-hidden="true"></i> 2
-              </li>
-            </ul>
-          </div>
+      <%= link_to posts_path(post.id), { :class => "gallery__item" } do %>
+        <%= image_tag post.image.to_s, :class => "gallery__image", :alt => "image" %>
+        <div class="gallery__item__info">
+          <ul>
+            <li class="gallery__item__likes">
+              <span class="visually-hidden">Likes:</span>
+              <i class="fas fa-heart" aria-hidden="true"></i> 56
+            </li>
+            <li class="gallery-item-comments">
+              <span class="visually-hidden">Comments:</span>
+              <i class="fas fa-comment" aria-hidden="true"></i> 2
+            </li>
+          </ul>
         </div>
       <% end %>
     <% end %>
