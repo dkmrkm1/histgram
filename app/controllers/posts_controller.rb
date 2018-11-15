@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+
   def index
     @post = Post.all.order(created_at: :desc)
   end
@@ -31,5 +31,10 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice] = "投稿を削除しました"
     redirect_to("/")
+  end
+
+  # TODO
+  def search
+    @post = Post.search(params[:search])
   end
 end
