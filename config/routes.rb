@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   # home
   get 'home/index' => "home#index"
   get "about" => "home#about"
@@ -9,8 +10,10 @@ Rails.application.routes.draw do
   post "posts/create" => "posts#create"
   get "posts/:id" => "posts#show", as: "posts"
   get "posts/:id/edit" => "posts#edit"
+  post "posts/:id/destroy" => "posts#destroy"
 
   # users
+  get 'users/index' => "users#index"
 
   # login
   get "login" => "home#login"
