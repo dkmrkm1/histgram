@@ -3,7 +3,7 @@
   <div class="gallery">
     
     <% @post.each do |post| %>
-      <%= link_to posts_path(post.id) do %>
+      <!-- <%= link_to posts_path(post.id) do %> -->
         <div class="gallery__item" tabindex="0">
           <%= image_tag post.image.to_s, :alt => "image" %>
           <div class="gallery__item__info">
@@ -19,7 +19,7 @@
             </ul>
           </div>
         </div>
-      <% end %>
+      <!-- <% end %> -->
     <% end %>
 
     <!--
