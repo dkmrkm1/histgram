@@ -1,5 +1,9 @@
 <!-- posts -->
 <div class="content" style="margin-top:1.5rem;">
+  <div class="gallery__header">
+    <p>New History</p>
+    <p><%= @post.count %> posts</p>
+  </div>
   <div class="gallery">
     <% @post.each do |post| %>
       <%= link_to posts_path(post.id), { :class => "gallery__item" } do %>
