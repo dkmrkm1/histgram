@@ -5,9 +5,12 @@
       <div class="col l12">
         <div class="row">
           <div class="col s12 l8">
+            <%= image_tag @post.image.to_s, :width => "800", :height => "600", :class => "responsive-img z-depth-3" %>
+
+                <!--
                 <div class="card">
                   <div class="card-image">
-                    <%= image_tag @post.image.to_s %>
+                    <%= image_tag @post.image.to_s, :width => "800", :height => "600", :class => "responsive-img z-depth-3" %>
                   </div>
                   <div class="card-content">
                     <p><%= simple_format(@post.content) %></p>
@@ -17,8 +20,22 @@
                     <%= link_to("削除", "/posts/#{@post.id}/destroy", { method: "post" })%>
                     <i class="far fa-heart fa-2x" aria-hidden="true"></i> 56
                   </div>
-                </div>
+                </div> -->
           </div>
+          <div class="col s12 l4">
+            <div class="card-panel">
+              <p>User Name</p>
+              <div class="card-content">
+                <p><%= simple_format(@post.content) %></p>
+              </div>
+              <div class="card-action">
+                <%= link_to "戻る", :back %>
+                <%= link_to("削除", "/posts/#{@post.id}/destroy", { method: "post" })%>
+                <i class="far fa-heart fa-2x" aria-hidden="true"></i> 56
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

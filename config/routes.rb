@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "posts/:id" => "posts#show", as: "posts"
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/destroy" => "posts#destroy"
+  # resources :posts
 
   # users
   get 'users/index' => "users#index"
