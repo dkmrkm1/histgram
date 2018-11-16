@@ -37,10 +37,12 @@ img {
 }
 .gallery__header {
   font-size: 2rem; 
-  color: gray; 
+  color: #444444d4; 
   font-weight: bold; 
   display: table; 
   width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .gallery__header p {
   display: table-cell;
