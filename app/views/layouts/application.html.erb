@@ -66,34 +66,35 @@
         </div>
       </li>
 
-      <% if @current_user %>
-        <li style="font-size:1.8rem; margin-left:2rem;"><%= @current_user.name %></li>
-      <% end %>
-
       <li>
         <%= link_to root_path do %>
           <i class="material-icons left">home</i>ホーム
         <% end %>
       </li>
-      <li><a href="#"><i class="material-icons left">account_circle</i>マイページ</a></li>
+      
+      <!-- ログイン可否 -->
+      <% if @current_user %>
+        <li><a href="#"><i class="material-icons left">account_circle</i><%= @current_user.name %></a></li>
+        <li>
+          <%= link_to logout_path, :method => :post do %>
+            <i class="material-icons left">exit_to_app</i>ログアウト
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to signup_path do %>
+            <i class="material-icons left">person_add</i>新規登録
+          <% end %>
+        </li>
+        <li>
+          <%= link_to login_path do %>
+            <i class="material-icons left">get_app</i>ログイン
+          <% end %>
+        </li>
+      <% end %>
       <li>
         <%= link_to about_path do %>
           <i class="material-icons left">info</i>このサイトについて
-        <% end %>
-      </li>
-      <li>
-        <%= link_to signup_path do %>
-          <i class="material-icons left">person_add</i>新規登録
-        <% end %>
-      </li>
-      <li>
-        <%= link_to login_path do %>
-          <i class="material-icons left">get_app</i>ログイン
-        <% end %>
-      </li>
-      <li>
-        <%= link_to logout_path, :method => :post do %>
-          <i class="material-icons left">exit_to_app</i>ログアウト
         <% end %>
       </li>
     </ul>
