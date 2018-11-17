@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   # users
   get 'users/index' => "users#index"
   get 'users/:id' => "users#show"
+  get "signup" => "users#new"
+  get "users/create" => "users#create"
 
   # login
   get "login" => "home#login"
