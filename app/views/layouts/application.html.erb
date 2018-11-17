@@ -22,6 +22,7 @@
   </head>
 
   <body>
+    <!-- header -->
     <nav>
       <div class="nav-wrapper" style="background:#294C7A;">
         <%= link_to "Histgram", "/", {:class => "brand-logo white-text"} %>
@@ -71,7 +72,7 @@
           <i class="material-icons left">home</i>ホーム
         <% end %>
       </li>
-      
+
       <!-- ログイン可否 -->
       <% if @current_user %>
         <li><a href="#"><i class="material-icons left">account_circle</i><%= @current_user.name %></a></li>
@@ -112,8 +113,6 @@
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems, {});
       });
-
-      $('.dropify').dropify();
     </script>
 
     <!-- FIXME: responsive -->

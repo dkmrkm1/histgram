@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
+  before_action :ensure_correct_user, {only: [:edit, :update]}
 
   def index
     @user = User.all
@@ -71,6 +72,13 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
     redirect_to("/login")
+  end
+
+  def ensure_correct_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to("/")
+    end
   end
 
 end
