@@ -14,10 +14,12 @@ Rails.application.routes.draw do
   # resources :posts
 
   # users
+  post "users/:id/update" => "users#update"
+  get "users/:id/edit" => "users#edit"
+  post "users/create" => "users#create"
+  get "signup" => "users#new"
   get 'users/index' => "users#index"
   get 'users/:id' => "users#show"
-  get "signup" => "users#new"
-  get "users/create" => "users#create"
 
   # login
   get "login" => "home#login"

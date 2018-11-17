@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @user = User.all
   end
 
   def show
@@ -7,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
   def create
@@ -14,8 +16,28 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email]
     )
-    @user.save
-    redirect_to("/users/#{@user.id}")
+    if @user.save
+      flash[:notice] = "ユーザー登録が完了しました"
+      redirect_to("/users/#{@user.id}")
+    else
+      render("user/new")
+    end
+  end
+
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.name = params[:name]
+    @user.email = params[:email]
+    if @user.save
+      flahs[:notice] = "ユーザー情報を編集しました"
+      redirect_to("/users/#{@user.id}")
+    else
+      render("users/edit")
+    end
   end
 
 end
