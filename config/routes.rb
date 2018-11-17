@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   # users
   get 'users/index' => "users#index"
+  get 'users/:id' => "users#show"
 
   # login
   get "login" => "home#login"
