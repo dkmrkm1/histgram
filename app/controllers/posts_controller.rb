@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    @user = User.find_by(id: @post.user_id)
   end
 
   def new
@@ -16,7 +17,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content:params[:post][:content],image:params[:post][:image])
+    @post = Post.new(
+      content: params[:post][:content],
+      image: params[:post][:image],
+      user_id: @current_user.id
+    )
     if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/")
