@@ -1,75 +1,39 @@
 <!-- login -->
-<div class="container" id="login-form">
+<div class="container" style="margin-top:1.5rem;">
   <div class="row">
     <div class="col s12 m12 l12">
-      <% if @error_message %>
-        <div class="form__error">
-          <%= @error_message %>
-        </div>
-      <% end %>
+      <div class="card-panel">
+        <h4>ログイン</h4>
 
-      <%= form_tag("/login") do %>
-        <h1>LOG IN</h1>
-        <div class="tbox">
-          <input type="text" name="email" value="<%= @email %>" placeholder="email">
-        </div>
-        <div class="tbox">
-          <input type="password" name="password" value="<%= @password %>" placeholder="password">
-        </div>
-        <p><input type="submit" class="btn" value="LOG IN"></p>
-        <a href="#" class="b1">FORGOT PASSWORD ?</a>
-        <a href="#" class="b2">CREATE AN ACCOUNT</a>
-      <% end %>
+        <% if @error_message %>
+          <div class="form__error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/login") do %>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" name="email" value="<%= @email %>">
+              <label for="email" class>email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="password" name="password" value="<%= @password %>">
+              <label for="password" class>password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <button type="submit" class="btn cyan waves-effect waves-light right">
+                submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-<style>
-#login-form {
-  background: #333;
-  font-family: "Montserrat", sans-serif !important;
-}
-#login-form.container {
-  height: 600px;
-  color: white;
-  text-align: center;
-  background-image: "/images/test1.png";
-}
-#login-form h1 {
-  font-size: 3rem;
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-.tbox {
-  width: 260px;
-  height: 40px;
-  background: #f1f1f1b3;
-  border-radius: 10px;
-  margin: 10px auto;
-}
-.tbox input {
-  border: none !important;
-  background: none;
-  outline: none;
-  text-align: center;
-  width: 90%;
-  line-height: 36px;
-  color: #333;
-}
-#login-form .btn {
-  width: 260px;
-  background: #3498db;
-  border-radius: 10px;
-  margin: 14px auto;
-  border: none;
-}
-.b1, .b2 {
-  display: block;
-  width: 260px;
-  padding: 10px 0;
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  margin: auto;
-}
-</style>

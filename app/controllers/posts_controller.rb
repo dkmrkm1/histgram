@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user, {only: [:new, :create, :edit, :destroy]}
+  # before_action :authenticate_user
 
   def index
     @post = Post.all.order(created_at: :desc)
