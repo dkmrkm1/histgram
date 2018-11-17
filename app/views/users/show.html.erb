@@ -1,9 +1,71 @@
+<!--
 <div class="container">
   <div class="row">
     <h2><%= @user.name %></h2>
     <p><%= @user.email %></p>
     <% if @user.id == @current_user.id %>
       <%= link_to("編集", "/users/#{@user.id}/edit") %>
+    <% end %>
+  </div>
+
+  <% @user.posts.each do |post| %>
+    <div class="row">
+      <div class="card">
+        <div class="card-content">
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+-->
+
+<!-- profile -->
+<div class="content">
+  <div class="profile">
+    <div class="profile__image">
+      <%= image_tag @user.image.to_s, :alt => "profile" %>
+    </div>
+
+    <div class="profile__user__settings">
+      <h1 class="profile__user__name"><%= @user.name %></h1>
+      <% if @user.id == @current_user.id %>
+        <%= link_to("編集", "/users/#{@user.id}/edit", :class => "btn profile__edit__btn") %>
+        <!-- <button class="btn profile__edit__btn">編集</button> -->
+      <% end %>
+    </div>
+
+    <div class="profile__stats">
+      <ul>
+        <li><span class="profile__stat__count">164</span> posts</li>
+      </ul>
+    </div>
+
+    <div class="profile__bio">
+      <p><%= @user.content %></p>
+    </div>
+  </div>
+</div>
+
+<!-- posts -->
+<div class="content">
+  <div class="gallery">
+    <% @user.posts.each do |post| %>
+      <%= link_to posts_path(post.id), { :class => "gallery__item" } do %>
+        <%= image_tag post.image.to_s, :class => "gallery__image", :alt => "image" %>
+        <div class="gallery__item__info">
+          <ul>
+            <li class="gallery__item__likes">
+              <span class="visually-hidden">Likes:</span>
+              <i class="fas fa-heart" aria-hidden="true"></i> 56
+            </li>
+            <li class="gallery-item-comments">
+              <span class="visually-hidden">Comments:</span>
+              <i class="fas fa-comment" aria-hidden="true"></i> 2
+            </li>
+          </ul>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

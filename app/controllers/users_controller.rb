@@ -17,9 +17,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(
-      name: params[:name],
-      email: params[:email],
-      password: params[:password]
+      name: params[:user][:name],
+      image: params[:user][:image],
+      content: params[:user][:content],
+      email: params[:user][:email],
+      password: params[:user][:password]
     )
     if @user.save
       session[:user_id] = @user.id
