@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   get 'users/index' => "users#index"
   get 'users/:id' => "users#show"
 
+  get "login" => "users#login_form"
+
   # login
   get "login" => "home#login"
-  get "logout" => "home#logout"    
+  get "logout" => "home#logout" 
 end

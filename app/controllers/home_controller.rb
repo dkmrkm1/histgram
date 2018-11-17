@@ -3,14 +3,5 @@ class HomeController < ApplicationController
   end
 
   def about
-
-  end
-
-  def login
-    
-  end
-
-  def logout
-    
   end
 end
