@@ -39,6 +39,14 @@
       </div>
     </nav>
 
+    <% if flash[:notice] %>
+      <div class="card green lighten-5">
+        <div class="card-content green-text">
+          <%= flash[:notice] %>
+        </div>
+      </div>
+    <% end %>
+
     <!-- sidenav -->
     <ul id="slide-out" class="sidenav">
       <li>
