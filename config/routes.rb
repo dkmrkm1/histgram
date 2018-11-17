@@ -22,8 +22,5 @@ Rails.application.routes.draw do
   get 'users/:id' => "users#show"
 
   get "login" => "users#login_form"
-
-  # login
-  get "login" => "home#login"
-  get "logout" => "home#logout" 
+  post "login" => "users#login"
 end
