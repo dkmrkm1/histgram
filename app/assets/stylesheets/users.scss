@@ -38,6 +38,7 @@ img {
   clear: both;
 }
 .profile__image img {
+  max-width: 275px;
   border-radius: 50%;
 }
 .profile__user__settings,
