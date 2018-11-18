@@ -13,16 +13,28 @@
               <div class="card-content">
                 <p><%= simple_format(@post.content) %></p>
               </div>
+
               <div class="card-action">
                 <%= link_to "戻る", :back %>
+
                 <% if @post.user_id == @current_user.id %>
                   <%= link_to("削除", "/posts/#{@post.id}/destroy", { method: "post" })%>
                 <% end %>
-                <i class="far fa-heart fa-2x" aria-hidden="true"></i> 56
+
+                <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+                  <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+                    <span class="fa fa-heart like-btn-unlike"></span>
+                  <% end %>
+                <% else %>
+                  <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+                    <span class="far fa-heart like-btn"></span>
+                  <% end %>
+                <% end %>
+                <%= @likes_count %>
               </div>
+
             </div>
           </div>
-
         </div>
       </div>
     </div>

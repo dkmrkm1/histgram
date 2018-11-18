@@ -95,6 +95,16 @@ img {
   object-fit: cover;
   border-radius: 1.1rem;
 }
+.like-btn {
+    color: #8899a6;
+}
+.like-btn-unlike {
+    color: #ff2581;
+}
+.posts-show-item .fa {
+    font-size: 16px;
+    margin-right: 3px;
+}
 
 /* Media Query */
 @media screen and (max-width: 40rem) {
