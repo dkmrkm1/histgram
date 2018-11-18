@@ -7,8 +7,10 @@
 
     <div class="profile__user__settings">
       <h1 class="profile__user__name"><%= @user.name %></h1>
-      <% if @user.id == @current_user.id %>
-        <%= link_to("編集", "/users/#{@user.id}/edit", :class => "btn red profile__edit__btn") %>
+      <% if @current_user %>
+        <% if @user.id == @current_user.id %>
+          <%= link_to("編集", "/users/#{@user.id}/edit", :class => "btn red profile__edit__btn") %>
+        <% end %>
       <% end %>
     </div>
 

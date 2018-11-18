@@ -33,6 +33,18 @@
             <% end %>
           </li>
         </ul>
+        <% if @current_user %>
+          <%= link_to("/users/#{@current_user.id}") do %>
+            <i class="material-icons right" style="margin-right:28px;">account_circle</i>
+          <% end %>
+          <%= link_to logout_path, :method => :post do %>
+            <i class="material-icons right" style="margin-right:28px;">exit_to_app</i>
+          <% end %>
+        <% else %>
+          <%= link_to login_path do %>
+            <i class="material-icons right" style="margin-right:28px;">get_app</i>
+          <% end %>
+        <% end %>
         <a href="#" data-target="slide-out" class="sidenav-trigger white-text">
           <i class="material-icons">menu</i>
         </a>
@@ -126,7 +138,7 @@
     }
     @media only screen and (min-width: 993px) {
       .brand-logo {
-        margin-left: 20px;
+        margin-left: 5rem;
       }
     }
     .user-view p {

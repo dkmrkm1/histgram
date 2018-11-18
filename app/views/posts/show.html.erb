@@ -16,21 +16,30 @@
 
               <div class="card-action">
                 <%= link_to "戻る", :back %>
-
-                <% if @post.user_id == @current_user.id %>
-                  <%= link_to("削除", "/posts/#{@post.id}/destroy", { method: "post" })%>
+                
+                <% if @current_user %>
+                  <% if @post.user_id == @current_user.id %>
+                    <%= link_to("削除", "/posts/#{@post.id}/destroy", { method: "post" })%>
+                  <% end %>
                 <% end %>
 
-                <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-                  <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
-                    <span class="fa fa-heart like-btn-unlike" style="margin-left:4rem;"></span>
+                <% if @current_user %>
+                  <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+                    <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+                      <span class="fa fa-heart like-btn-unlike" style="margin-left:4rem;"></span>
+                    <% end %>
+                  <% else %>
+                    <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+                      <span class="far fa-heart like-btn" style="margin-left:4rem;"></span>
+                    <% end %>
                   <% end %>
+                  <%= @likes_count %>
                 <% else %>
                   <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
                     <span class="far fa-heart like-btn" style="margin-left:4rem;"></span>
                   <% end %>
+                  <%= @likes_count %>
                 <% end %>
-                <%= @likes_count %>
               </div>
 
             </div>
