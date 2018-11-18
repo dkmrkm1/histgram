@@ -15,3 +15,9 @@ An image submission type social network service like an instagram created with r
 ## Demo
 
 ![image](https://i.imgur.com/HImpaoi.gif)
+
+## Author
+Duuun
+
+## License
+MIT

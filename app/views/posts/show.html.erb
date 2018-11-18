@@ -15,7 +15,9 @@
               </div>
               <div class="card-action">
                 <%= link_to "戻る", :back %>
-                <%= link_to("削除", "/posts/#{@post.id}/destroy", { method: "post" })%>
+                <% if @post.user_id == @current_user.id %>
+                  <%= link_to("削除", "/posts/#{@post.id}/destroy", { method: "post" })%>
+                <% end %>
                 <i class="far fa-heart fa-2x" aria-hidden="true"></i> 56
               </div>
             </div>
