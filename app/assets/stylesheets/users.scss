@@ -307,3 +307,44 @@ Remove or comment-out the code block below to see how the browser will fall-back
         }
     }
 }
+
+/****************
+*** login-form **
+*****************/
+html, body {
+  width: 100%;
+  height: 100%;
+  background: url(https://subtlepatterns.com/patterns/sativa.png) repeat fixed;
+}
+.loginBox {
+  position: relative;
+  top: 50%;
+	width: 250px;
+  display: table;
+  margin: -150px auto 0 auto;
+  background: #fff;
+  border-radius: 4px;
+}
+.legend {
+  position: relative;
+  width: 100%;
+  display: block;
+  background: #FF7052;
+  padding: 15px;
+  color: #fff;
+  font-size: 20px;
+  
+  &:after{
+    content: "";
+    background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: 152px -16px;
+    opacity: 0.06;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
+}
