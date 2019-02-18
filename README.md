@@ -1,6 +1,6 @@
 # Histgram
 [![Maintainability](https://api.codeclimate.com/v1/badges/82fa02f4ff54926fa4b6/maintainability)](https://codeclimate.com/github/Duuun/histgram/maintainability)
-![](https://img.shields.io/badge/release-v0..0-blue.svg)
+![](https://img.shields.io/badge/release-v0.5.0-blue.svg)
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 ![image](https://i.imgur.com/1eTEPBM.png)
