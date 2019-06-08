@@ -1,0 +1,95 @@
+doctype html
+html
+  head
+    title
+      | Histgram
+    = csrf_meta_tags
+    = csp_meta_tag
+    meta[name="viewport" content="width=device-width,initial-scale=1.0"]
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    link[rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
+    script[src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"]
+    link[href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"]
+    link[href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet"]
+    link[rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"]
+  body
+    nav
+      .nav-wrapper[style="background:#294C7A;"]
+        = link_to "Histgram", "/", {:class => "brand-logo white-text"}
+        ul#nav-mobile.right.hide-on-med-and-down.white-text
+          li
+            = link_to("/about") do
+              i.material-icons.left
+                | info
+        - if @current_user
+          = link_to("/users/#{@current_user.id}") do
+            i.material-icons.right[style="margin-right:28px;"]
+              | account_circle
+          = link_to logout_path, :method => :post do
+            i.material-icons.right[style="margin-right:28px;"]
+              | exit_to_app
+        - else
+          = link_to login_path do
+            i.material-icons.right[style="margin-right:28px;"]
+              | person_pin
+        a.sidenav-trigger.white-text[href="#" data-target="slide-out"]
+          i.material-icons
+            | menu
+    - if flash[:notice]
+      .container[style="position:absolute;"]
+        .row
+          .col.s12.m12.l12
+            .card.green.lighten-5
+              .card-content.green-text[style="font-size:1.2rem;"]
+                = flash[:notice]
+    ul#slide-out.sidenav
+      li
+        .user-view
+          .background
+            = image_tag "about.jpg", :width => "300", :height => "160"
+          p
+            | Histgram
+          p
+            | Life is beautiful.
+      li
+        = link_to root_path do
+          i.material-icons.left
+            | home
+          | ホーム 
+      - if @current_user
+        li
+          = link_to("/users/#{@current_user.id}") do
+            i.material-icons.left
+              | account_circle
+            = @current_user.name
+        li
+          = link_to logout_path, :method => :post do
+            i.material-icons.left
+              | exit_to_app
+            | ログアウト 
+      - else
+        li
+          = link_to signup_path do
+            i.material-icons.left
+              | person_add
+            | 新規登録 
+        li
+          = link_to login_path do
+            i.material-icons.left
+              | get_app
+            | ログイン 
+      li
+        = link_to about_path do
+          i.material-icons.left
+            | info
+          | このサイトについて 
+    = yield
+    .fixed-action-btn
+      = link_to posts_new_path, class: "btn-floating btn-large red" do
+        i.material-icons[style="font-size:2.6rem;"]
+          | add
+    script
+      |  document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.sidenav'); var instances = M.Sidenav.init(elems, {}); }); 
+    style
+      |  nav .brand-logo { font-family: 'Abril Fatface', cursive; letter-spacing: 1.6px; font-size: 2.5rem; } @media only screen and (min-width: 993px) { .brand-logo { margin-left: 5rem; } } .user-view p { font-size: 2rem; font-weight: bold; color: azure; } 

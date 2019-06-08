@@ -1,0 +1,20 @@
+.content[style="margin-top:1.5rem;"]
+  .gallery__header
+    p
+      | New History
+    p
+      span[style="color: #000;"]
+        = @post.count
+      |  posts
+  .gallery
+    - @post.each do |post|
+      = link_to posts_path(post.id), { :class => "gallery__item" } do
+        = image_tag post.image.to_s, :class => "gallery__image", :alt => "image"
+        .gallery__item__info
+          ul
+            li.gallery__item__likes
+              span.visually-hidden
+                | Likes:
+              i.fas.fa-heart[aria-hidden="true"]
+              = @likes_count
+style
