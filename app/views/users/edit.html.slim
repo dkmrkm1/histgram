@@ -1,0 +1,20 @@
+.container
+  .row
+    h4
+      | アカウント編集
+    .form
+      - @user.errors.full_messages.each do |message|
+        .form__error
+          = message
+      = form_tag("/users/#{@user.id}/update") do
+        p
+          | ユーザー名
+        |  <input name="name" value="
+        = @user.name
+        | "> 
+        p
+          | メールアドレス
+        |  <input name="email" value="
+        = @user.email
+        | "> 
+        input[type="submit" value="保存"]

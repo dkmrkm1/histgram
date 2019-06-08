@@ -1,0 +1,23 @@
+.container[style="margin-top:1.5rem;"]
+  .row
+    h4
+      | 新規ユーザー登録
+    div
+      - @user.errors.full_messages.each do |message|
+        div
+          = message
+      = form_for @user, :url => {:action => 'create'} do |f|
+        p
+          | ユーザー名
+        = f.text_field :name
+        = f.file_field :image
+        p
+          | 自己紹介
+        = f.text_field :content
+        p
+          | メールアドレス
+        = f.text_field :email
+        p
+          | パスワード
+        = f.password_field :password
+        input[type="submit" value="新規登録"]

@@ -1,0 +1,31 @@
+.content
+  .profile
+    .profile__image
+      = image_tag @user.image.to_s, :alt => "profile"
+    .profile__user__settings
+      h1.profile__user__name
+        = @user.name
+      - if @current_user
+        - if @user.id == @current_user.id
+          = link_to("編集", "/users/#{@user.id}/edit", :class => "btn red profile__edit__btn")
+    .profile__stats
+      ul
+        li
+          span.profile__stat__count
+            = @user.posts.count
+          |  posts 
+    .profile__bio
+      p
+        = @user.content
+.content
+  .gallery
+    - @user.posts.each do |post|
+      = link_to posts_path(post.id), { :class => "gallery__item" } do
+        = image_tag post.image.to_s, :class => "gallery__image", :alt => "image"
+        .gallery__item__info
+          ul
+            li.gallery__item__likes
+              span.visually-hidden
+                | Likes:
+              i.fas.fa-heart[aria-hidden="true"]
+              = @likes_count

@@ -1,0 +1,30 @@
+.container[style="margin-top: 1.5rem;"]
+  .section
+    .row
+      .col.l12
+        .row
+          .col.s12.l8
+            = image_tag @post.image.to_s, :width => "800", :height => "600", :class => "responsive-img z-depth-3"
+          .col.s12.l4
+            .card-panel[style="font-size:1.5rem;"]
+              = link_to(@user.name, "/users/#{@user.id}")
+              .card-content
+                p
+                  = simple_format(@post.content)
+              .card-action
+                = link_to "戻る", :back
+                - if @current_user
+                  - if @post.user_id == @current_user.id
+                    = link_to("削除", "/posts/#{@post.id}/destroy", { method: "post" })
+                - if @current_user
+                  - if Like.find_by(user_id: @current_user.id, post_id: @post.id)
+                    = link_to("/likes/#{@post.id}/destroy", {method: "post"}) do
+                      span.fa.fa-heart.like-btn-unlike[style="margin-left:4rem;"]
+                  - else
+                    = link_to("/likes/#{@post.id}/create", {method: "post"}) do
+                      span.far.fa-heart.like-btn[style="margin-left:4rem;"]
+                  = @likes_count
+                - else
+                  = link_to("/likes/#{@post.id}/create", {method: "post"}) do
+                    span.far.fa-heart.like-btn[style="margin-left:4rem;"]
+                  = @likes_count
