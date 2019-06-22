@@ -12,6 +12,9 @@
 #
 
 class Post < ApplicationRecord
+  has_many :tag_posts
+  has_many :tags, through: :tag_posts
+
   before_create :set_create_slug
 
   validates :content, {presence: true}
