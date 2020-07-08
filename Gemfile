@@ -7,7 +7,7 @@ gem 'rails', '~> 5.2.1'
 gem 'annotate'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0'
 gem 'dotenv-rails'
 gem 'fog'
 gem 'html2slim'
